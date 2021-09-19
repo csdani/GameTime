@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid no-padding">
+        <div class="row always-bar">
+          <div class="col-4">
+          </div>
+          <div class="col-4 status-bar text-center">
+            <span *ngIf="currentUser">{{displayedElapsedTime}}</span>
+            <span *ngIf="!currentUser">Please sign in!</span>
+          </div>
+          <div class="col-4 user text-end">
+            <span *ngIf="!currentUser" class="me-3"><a [routerLink]="['/login']">Login</a></span>
+            <span *ngIf="!currentUser" class="me-3">Register</span>
+            <span *ngIf="currentUser" (click)="logOut()" class="me-3"><a href="">Logout</a></span>
+          </div>
+        </div>
+      </div>
+
+</body>
+</html>
